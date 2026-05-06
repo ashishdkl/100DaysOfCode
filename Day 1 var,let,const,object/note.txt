@@ -1,0 +1,12 @@
+in day one i lern about var, let, const and object
+
+var is used to decalare varibles.but now in morden js we don't use var because it's not block level it's global means we can acess the varibles from anywhere.
+
+let is used to decalare variable in js it's block level
+{
+
+}
+
+const is used to create variable to but we can't change the value of the variable which is created using const
+
+object are created using key value pair they are useful in morden js. we can store all the data of a perticular person or thing using object
