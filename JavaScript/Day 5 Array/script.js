@@ -43,7 +43,7 @@ console.log(stack);
 //pop - use to remove element from the end.when we need to remove the element from the end we use pop.let's have a example using the stack variable which store array.
 stack.pop();
 console.log(stack);
-//if we want to don't modify the main variable then we can use another variable to do this operations. we can see example in another step.
+//if we don't want to modify the main variable then we can use another variable to do this operations. we can see example in another step.
 
 //unshift - use to add element in the beginning of the array.
 stack.unshift("C Programming.");
