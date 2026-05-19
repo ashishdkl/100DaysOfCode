@@ -34,6 +34,7 @@ console.log(aToZ.slice(3)); // It will display all the elements after the index 
 // splice() is used to: add, remove, or replace elements in an array (directly changes original array)
 console.log("Splice.");
 console.log(aToZ.splice(1, 3, "Replaced"));
+console.log(aToZ);
 
 // Finding Elemetns
 let numbers = [22, 33, 445, 6, 4543, 34, 324, 23423, 654, 53, 1, 2, 3, 4, 5];
