@@ -1,11 +1,9 @@
-console.log("Hello Everyone");
-
-let balance = document.querySelector("#balance");
 let income = document.querySelector("#income");
 let expenses = document.querySelector("#expenses");
 let loan = document.querySelector("#loan");
 let addAmount = document.querySelector("#addAmount");
 let firstArray = [];
+let details = document.querySelector(".details");
 addAmount.addEventListener("click", () => {
   let bal = balance.value;
   let inco = income.value;
@@ -16,16 +14,28 @@ addAmount.addEventListener("click", () => {
     alert("Input Can't be Empty.");
     return;
   }
+
   let newObj = {
     balance: Number(bal),
     income: Number(inco),
     expenses: Number(expen),
     loan: Number(loa),
   };
+
   firstArray.push(newObj);
-  console.log(firstArray);
-  let details = document.querySelector(".details");
-  details.innerHTML = firstArray;
+
+  details.innerHTML = "";
+  firstArray.forEach((item) => {
+    details.innerHTML += `
+<div> 
+<p> Balance: ${item.balance} </p>
+<p> Income: ${item.income}  </p>
+<p> Expenses: ${item.expenses} </p>
+<p> Loan: ${item.loan}</p>
+</div>
+
+`;
+  });
 });
 
 // Add transaction
