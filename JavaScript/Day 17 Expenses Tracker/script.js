@@ -44,8 +44,9 @@ let transactionName = document.querySelector("#name");
 let amount = document.querySelector("#amount");
 let histroy = document.querySelector(".history");
 let transactionArray = [];
-let option = document.querySelector("#select").value;
+let option = document.querySelector("#select");
 let btn = document.querySelector("#btn");
+let incomeTransaction;
 
 btn.addEventListener("click", () => {
   let trName = transactionName.value;
