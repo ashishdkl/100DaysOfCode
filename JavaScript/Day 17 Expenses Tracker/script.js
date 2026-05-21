@@ -4,6 +4,7 @@ let loan = document.querySelector("#loan");
 let addAmount = document.querySelector("#addAmount");
 let firstArray = [];
 let details = document.querySelector(".details");
+
 addAmount.addEventListener("click", () => {
   let bal = balance.value;
   let inco = income.value;
@@ -41,13 +42,32 @@ addAmount.addEventListener("click", () => {
 // Add transaction
 let transactionName = document.querySelector("#name");
 let amount = document.querySelector("#amount");
+let histroy = document.querySelector(".history");
+let transactionArray = [];
+let option = document.querySelector("#select").value;
 let btn = document.querySelector("#btn");
+
 btn.addEventListener("click", () => {
   let trName = transactionName.value;
   let amt = amount.value;
+  let opt = option.value;
   if (trName === "" || amt === "") {
     alert("Input can't be Empty.");
     return;
   }
-  console.log("Clicked");
+  let secondObj = {
+    name: trName,
+    amount: Number(amt),
+    option: opt,
+  };
+  transactionArray.push(secondObj);
+  histroy.innerHTML = "";
+  transactionArray.forEach((item) => {
+    histroy.innerHTML += `
+<div>
+  <p>Nam: ${item.name} </p>
+  <p>Amount:${item.amount} </p>
+  <p>Type:${item.option} </p>
+</div>`;
+  });
 });
