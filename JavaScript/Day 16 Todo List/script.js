@@ -8,5 +8,5 @@ button.addEventListener("click", () => {
     alert("Input can't be empty.");
   }
   console.log(task);
-  list.innerHTML=task;
+  list.innerHTML = task;
 });

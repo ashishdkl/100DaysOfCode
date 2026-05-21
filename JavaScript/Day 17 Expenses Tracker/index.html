@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Expenses Tracker</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Expenses Tracker</h1>
+      <div class="amount">
+        <input type="number" id="balance" placeholder="Balance" />
+        <input type="number" id="income" placeholder="Income" />
+        <input type="number" id="expenses" placeholder="Expenses" />
+        <input type="number" id="loan" placeholder="Loan" />
+        <button id="addAmount">Add</button>
+      </div>
+      <h3>Add Transaction</h3>
+      <div class="transaction">
+        <input type="text" id="name"  placeholder="Transaction Details" />
+        <input type="text" id="amount" placeholder="Amount" />
+        <select name="type" id="select">
+          <option value="amountType">Amount type</option>
+          <option value="income">Income</option>
+          <option value="expenses">Expenses</option>
+        </select>
+        <button id="btn">Add Transaction</button>
+      </div>
+      <div class="details"></div>
+      <div class="history"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
