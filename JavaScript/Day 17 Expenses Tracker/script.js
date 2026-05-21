@@ -47,6 +47,9 @@ let transactionArray = [];
 let option = document.querySelector("#select");
 let btn = document.querySelector("#btn");
 let incomeTransaction;
+let totalIncome;
+let totalExpenses;
+let expensesTransaction;
 
 btn.addEventListener("click", () => {
   let trName = transactionName.value;
@@ -71,4 +74,22 @@ btn.addEventListener("click", () => {
   <p>Type:${item.option} </p>
 </div>`;
   });
+  incomeTransaction = transactionArray.filter(
+    (item) => item.option === "income",
+  );
+  totalIncome = incomeTransaction.reduce((sum, item) => {
+    return sum + item.amount;
+  }, 0);
+  expensesTransaction = transactionArray.filter(
+    (item) => item.option === "expenses",
+  );
+  totalExpenses = expensesTransaction.reduce((sum, item) => {
+    return sum + item.amount;
+  }, 0);
+  let currentBalance = totalIncome - totalExpenses;
+  details.innerHTML = `
+  <h3>Total Income: ${totalIncome}</h3>
+  <h3>Total Expenses: ${totalExpenses}</h3>
+  <h3>Balance: ${currentBalance}</h3>
+`;
 });
