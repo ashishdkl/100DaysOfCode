@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookMark Manager</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>BookMark Manager</h1>
+
+      <form class="userInput">
+        <label for="title">Title</label>
+        <input type="text" id="title" required />
+
+        <label for="url">Url</label>
+        <input type="url" id="url" required />
+
+        <label for="details">Details</label>
+        <input type="text" id="details" required />
+
+        <select name="type" id="type">
+          <option value="" disabled selected>Select Type</option>
+          <option value="tech">Tech</option>
+          <option value="others">Others</option>
+        </select>
+
+        <button id="add" type="submit">Add</button>
+      </form>
+
+      <div class="linkDisplay"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
