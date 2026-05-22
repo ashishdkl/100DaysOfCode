@@ -14,7 +14,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 700px;
+  max-width: 750px;
 }
 
 h1 {
@@ -28,8 +28,9 @@ h1 {
   background: white;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -62,42 +63,58 @@ h1 {
   background: #3730a3;
 }
 
-/* DISPLAY AREA */
+/* LIST AREA */
 .linkDisplay {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
 }
 
-/* CARD */
+/* CARD (HORIZONTAL LAYOUT) */
 .linkDisplay div {
   background: white;
   padding: 15px;
   border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+
   transition: 0.2s;
 }
 
 .linkDisplay div:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
-/* TEXT INSIDE CARD */
-.linkDisplay p {
-  margin: 5px 0;
-  color: #333;
+/* ICON */
+.linkDisplay img {
+  width: 22px;
+  height: 22px;
+  margin-top: 3px;
+}
+
+/* TEXT WRAPPER */
+.card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* TEXT STYLING */
+.card-text p {
   font-size: 14px;
+  color: #333;
 }
 
 /* URL STYLE */
-.linkDisplay a {
-  display: inline-block;
-  margin-top: 5px;
+.card-text a {
   color: #4f46e5;
   text-decoration: none;
   font-weight: bold;
 }
 
-.linkDisplay a:hover {
+.card-text a:hover {
   text-decoration: underline;
 }
