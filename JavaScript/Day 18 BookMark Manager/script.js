@@ -21,14 +21,31 @@ add.addEventListener("click", (event) => {
   };
   bookMark.push(obj);
   display.innerHTML = "";
-  bookMark.forEach((item) => {
+  bookMark.forEach((item, index) => {
     display.innerHTML += `
 <div>
     <p>${item.title}</p>
     <p>${item.url}</p>
     <p>${item.details}</p>
     <p>${item.type}</p>
+    <button onclick="deleteBookmark(${index})">Delete</button>
 </div>
 `;
   });
 });
+function deleteBookmark(index) {
+  bookMark.splice(index, 1);
+  display.innerHTML = "";
+  bookMark.forEach((item, index) => {
+    display.innerHTML += `
+<div>
+    <p>${item.title}</p>
+    <p>${item.url}</p>
+    <p>${item.details}</p>
+    <p>${item.type}</p>
+    <button onclick="deleteBookmark(${index})">Delete</button>
+    </div>
+
+    `;
+  });
+}
