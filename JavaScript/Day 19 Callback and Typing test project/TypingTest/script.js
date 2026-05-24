@@ -14,6 +14,11 @@ restart.addEventListener("click", () => {
   mistake.textContent = 0;
 });
 
+let second = 0;
 textarea.addEventListener("input", () => {
   console.log("Typing");
+  setInterval(() => {
+    second++;
+    console.log(second);
+  }, 1000);
 });
