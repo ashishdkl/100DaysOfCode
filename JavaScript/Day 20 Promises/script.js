@@ -1,4 +1,8 @@
 let promises = new Promise((resolve, reject) => {
-console.log(resolve);
-console.log(reject);
+  let sucess = true;
+  if (sucess) {
+    console.log("Featched");
+  } else {
+    console.log("not");
+  }
 });
