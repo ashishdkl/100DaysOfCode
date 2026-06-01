@@ -9,7 +9,8 @@ firstAsync();
 //featch API.
 
 async function getData() {
-  let response = fetch("https://jsonplaceholder.typicode.com/todos/1");
-  console.log(response);
+  let response =await  fetch("https://jsonplaceholder.typicode.com/todos/1");
+  let data= await response.json(); // convert api response into javascript object/data
+  console.log(data);
 }
 getData();
