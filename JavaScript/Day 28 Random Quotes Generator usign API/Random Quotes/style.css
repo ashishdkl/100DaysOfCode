@@ -1,0 +1,108 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Page background */
+body {
+  background: linear-gradient(135deg, #6c63ff, #4fd1c5);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Main container */
+.container {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+.container h1 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Paragraph */
+.container p {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+/* Label */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #444;
+}
+
+/* Input */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #6c63ff;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #574fd6;
+  transform: scale(1.03);
+}
+
+/* Display section */
+.display {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 450px;
+}
+
+/* Output container */
+.displayContainer {
+  margin-top: 10px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  min-height: 100px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual quote (for JS output) */
+.quote {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-left: 4px solid #6c63ff;
+  background: #f9f9f9;
+  border-radius: 5px;
+}
