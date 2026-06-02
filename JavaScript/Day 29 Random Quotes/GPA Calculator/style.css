@@ -13,12 +13,11 @@ body {
   justify-content: center;
   align-items: center;
   background: #0b1326;
-  overflow-x: hidden;
   padding: 20px;
-  position: relative;
+  overflow-x: hidden;
 }
 
-/* ===== GLOWING BACKGROUND ===== */
+/* ===== BACKGROUND GLOW ===== */
 body::before,
 body::after {
   content: "";
@@ -26,7 +25,7 @@ body::after {
   border-radius: 50%;
   filter: blur(100px);
   opacity: 0.3;
-  animation: float 10s infinite alternate ease-in-out;
+  z-index: -1;
 }
 
 body::before {
@@ -45,16 +44,6 @@ body::after {
   right: -100px;
 }
 
-@keyframes float {
-  from {
-    transform: translate(0, 0);
-  }
-
-  to {
-    transform: translate(50px, 30px);
-  }
-}
-
 /* ===== CONTAINER ===== */
 .container {
   width: 550px;
@@ -63,24 +52,21 @@ body::after {
 
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(25px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255,255,255,0.08);
 
-  box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.4),
-    inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
 
   color: white;
 
   animation: fadeIn 0.8s ease;
 }
 
-/* ===== FADE IN ===== */
+/* ===== ANIMATION ===== */
 @keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(40px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -89,180 +75,35 @@ body::after {
 
 /* ===== TITLE ===== */
 h1 {
-  font-size: 38px;
+  font-size: 36px;
   margin-bottom: 10px;
-  font-weight: 700;
   color: #89ceff;
 }
 
-.container p:first-of-type {
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 35px;
-  line-height: 1.6;
+.container p {
+  margin-bottom: 25px;
+  color: rgba(255,255,255,0.7);
 }
 
-/* ===== DROPDOWNS ===== */
-.credit,
-.grade {
-  width: 100%;
-  padding: 18px;
+/* ===== COURSE ROW ===== */
+.course-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-bottom: 18px;
-
-  border: none;
-  border-radius: 18px;
-  outline: none;
-
-  background: rgba(255, 255, 255, 0.08);
-  color: white;
-  font-size: 17px;
-
-  backdrop-filter: blur(15px);
-
-  transition: all 0.3s ease;
-}
-
-/* hover */
-.credit:hover,
-.grade:hover {
-  transform: translateY(-2px);
-}
-
-/* focus glow */
-.credit:focus,
-.grade:focus {
-  border: 1px solid #89ceff;
-  box-shadow: 0 0 20px rgba(137, 206, 255, 0.3);
-}
-
-/* option color */
-option {
-  color: black;
-}
-
-/* ===== BUTTONS ===== */
-button {
   width: 100%;
-  padding: 18px;
-  border: none;
-  border-radius: 18px;
-
-  font-size: 17px;
-  font-weight: 600;
-  cursor: pointer;
-
-  transition: all 0.3s ease;
 }
 
-/* ADD COURSE */
-#course {
-  margin-top: 20px;
-  margin-bottom: 22px;
-
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(0, 255, 180, 0.2);
-  color: #62f5bb;
-}
-
-/* CALCULATE */
-#calculate {
-  margin-bottom: 45px;
-
-  background: linear-gradient(135deg, #00a572, #00c48c);
-
-  color: white;
-
-  box-shadow: 0 10px 25px rgba(0, 165, 114, 0.25);
-}
-
-/* button hover */
-button:hover {
-  transform: translateY(-4px);
-}
-
-/* click effect */
-button:active {
-  transform: scale(0.98);
-}
-
-/* ===== RESULT ===== */
-#sgpa {
-  display: inline-block;
-  font-size: 42px;
-  font-weight: bold;
-  color: #89ceff;
-
-  text-shadow:
-    0 0 10px rgba(137, 206, 255, 0.5),
-    0 0 30px rgba(137, 206, 255, 0.3);
-
-  animation: glow 2s infinite alternate;
-}
-
-@keyframes glow {
-  from {
-    text-shadow: 0 0 10px rgba(137, 206, 255, 0.3);
-  }
-
-  to {
-    text-shadow:
-      0 0 20px rgba(137, 206, 255, 0.8),
-      0 0 40px rgba(137, 206, 255, 0.5);
-  }
-}
-
-/* ===== RESULT TEXT ===== */
-.container p:last-of-type {
-  text-align: center;
-  font-size: 22px;
-}
-
-/* ===== MOBILE ===== */
-@media (max-width: 650px) {
-  .container {
-    width: 100%;
-    padding: 28px;
-  }
-
-  h1 {
-    font-size: 30px;
-  }
-}
-/* CREDIT + GRADE SAME LINE */
+/* ===== CREDIT + GRADE ===== */
 .credit,
 .grade {
-  width: 48%;
-  padding: 18px;
-  margin-bottom: 18px;
+  flex: 1;
+  height: 55px;
 
-  border: none;
-  border-radius: 18px;
-  outline: none;
-
-  background: rgba(255, 255, 255, 0.08);
-  color: white;
-  font-size: 17px;
-
-  backdrop-filter: blur(15px);
-  transition: all 0.3s ease;
-
-  display: inline-block;
-}
-
-.credit {
-  margin-right: 2%;
-}
-/* ===== CREDIT + GRADE (BETTER LOOK) ===== */
-.credit,
-.grade {
-  width: 48%;
-  display: inline-block;
-  vertical-align: top;
-
-  padding: 14px 18px;
-  margin-bottom: 20px;
+  padding: 14px 16px;
+  border-radius: 16px;
 
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px;
   outline: none;
 
   background: rgba(255,255,255,0.06);
@@ -275,11 +116,6 @@ button:active {
   transition: all 0.3s ease;
 }
 
-/* spacing between dropdowns */
-.credit {
-  margin-right: 2%;
-}
-
 /* hover */
 .credit:hover,
 .grade:hover {
@@ -287,36 +123,23 @@ button:active {
   background: rgba(255,255,255,0.09);
 }
 
-/* focus glow */
+/* focus */
 .credit:focus,
 .grade:focus {
-  border: 1px solid rgba(137, 206, 255, 0.5);
-  box-shadow: 0 0 18px rgba(137,206,255,0.2);
+  border-color: rgba(137,206,255,0.4);
+  box-shadow: 0 0 15px rgba(137,206,255,0.15);
 }
 
 /* dropdown options */
 option {
   color: black;
 }
-/* ===== COURSE ROW ===== */
-.course-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 20px;
-}
 
-/* make selects fit nicely */
-.credit,
-.grade {
-  width: 100%;
-  margin-bottom: 0;
-}
-
-/* delete button */
+/* ===== DELETE BUTTON ===== */
 .delete-btn {
   width: 55px;
-  height: 52px;
+  height: 55px;
+
   flex-shrink: 0;
 
   border: none;
@@ -324,22 +147,69 @@ option {
   cursor: pointer;
 
   background: rgba(255, 80, 80, 0.12);
-  border: 1px solid rgba(255, 90, 90, 0.2);
+  border: 1px solid rgba(255, 80, 80, 0.15);
 
   color: #ff7b7b;
-  font-size: 22px;
+  font-size: 20px;
 
   transition: all 0.3s ease;
 }
 
-/* hover effect */
+/* hover */
 .delete-btn:hover {
-  background: rgba(255, 80, 80, 0.2);
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(255, 70, 70, 0.2);
+  background: rgba(255,80,80,0.2);
+  box-shadow: 0 8px 20px rgba(255,80,80,0.15);
 }
 
 /* click */
 .delete-btn:active {
   transform: scale(0.96);
+}
+
+/* ===== BUTTONS ===== */
+button#course,
+button#calculate {
+  width: 100%;
+  padding: 16px;
+  border-radius: 18px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: 0.3s ease;
+}
+
+/* ADD COURSE */
+#course {
+  background: rgba(255,255,255,0.08);
+  color: #62f5bb;
+  border: 1px solid rgba(98,245,187,0.2);
+  margin-bottom: 20px;
+}
+
+/* CALCULATE */
+#calculate {
+  background: linear-gradient(135deg, #00a572, #00c48c);
+  color: white;
+  margin-bottom: 35px;
+}
+
+/* hover buttons */
+button:hover {
+  transform: translateY(-3px);
+}
+
+/* click */
+button:active {
+  transform: scale(0.98);
+}
+
+/* ===== RESULT ===== */
+#sgpa {
+  font-size: 42px;
+  font-weight: bold;
+  color: #89ceff;
+  text-shadow: 0 0 20px rgba(137,206,255,0.4);
 }
