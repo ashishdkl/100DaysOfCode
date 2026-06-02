@@ -1,0 +1,345 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+  font-family: "Segoe UI", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0b1326;
+  overflow-x: hidden;
+  padding: 20px;
+  position: relative;
+}
+
+/* ===== GLOWING BACKGROUND ===== */
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.3;
+  animation: float 10s infinite alternate ease-in-out;
+}
+
+body::before {
+  width: 300px;
+  height: 300px;
+  background: #1d4ed8;
+  top: -100px;
+  left: -100px;
+}
+
+body::after {
+  width: 250px;
+  height: 250px;
+  background: #00d4ff;
+  bottom: -100px;
+  right: -100px;
+}
+
+@keyframes float {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(50px, 30px);
+  }
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  width: 550px;
+  padding: 40px;
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08);
+
+  color: white;
+
+  animation: fadeIn 0.8s ease;
+}
+
+/* ===== FADE IN ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== TITLE ===== */
+h1 {
+  font-size: 38px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #89ceff;
+}
+
+.container p:first-of-type {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 35px;
+  line-height: 1.6;
+}
+
+/* ===== DROPDOWNS ===== */
+.credit,
+.grade {
+  width: 100%;
+  padding: 18px;
+  margin-bottom: 18px;
+
+  border: none;
+  border-radius: 18px;
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  font-size: 17px;
+
+  backdrop-filter: blur(15px);
+
+  transition: all 0.3s ease;
+}
+
+/* hover */
+.credit:hover,
+.grade:hover {
+  transform: translateY(-2px);
+}
+
+/* focus glow */
+.credit:focus,
+.grade:focus {
+  border: 1px solid #89ceff;
+  box-shadow: 0 0 20px rgba(137, 206, 255, 0.3);
+}
+
+/* option color */
+option {
+  color: black;
+}
+
+/* ===== BUTTONS ===== */
+button {
+  width: 100%;
+  padding: 18px;
+  border: none;
+  border-radius: 18px;
+
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+/* ADD COURSE */
+#course {
+  margin-top: 20px;
+  margin-bottom: 22px;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 255, 180, 0.2);
+  color: #62f5bb;
+}
+
+/* CALCULATE */
+#calculate {
+  margin-bottom: 45px;
+
+  background: linear-gradient(135deg, #00a572, #00c48c);
+
+  color: white;
+
+  box-shadow: 0 10px 25px rgba(0, 165, 114, 0.25);
+}
+
+/* button hover */
+button:hover {
+  transform: translateY(-4px);
+}
+
+/* click effect */
+button:active {
+  transform: scale(0.98);
+}
+
+/* ===== RESULT ===== */
+#sgpa {
+  display: inline-block;
+  font-size: 42px;
+  font-weight: bold;
+  color: #89ceff;
+
+  text-shadow:
+    0 0 10px rgba(137, 206, 255, 0.5),
+    0 0 30px rgba(137, 206, 255, 0.3);
+
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgba(137, 206, 255, 0.3);
+  }
+
+  to {
+    text-shadow:
+      0 0 20px rgba(137, 206, 255, 0.8),
+      0 0 40px rgba(137, 206, 255, 0.5);
+  }
+}
+
+/* ===== RESULT TEXT ===== */
+.container p:last-of-type {
+  text-align: center;
+  font-size: 22px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 650px) {
+  .container {
+    width: 100%;
+    padding: 28px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+}
+/* CREDIT + GRADE SAME LINE */
+.credit,
+.grade {
+  width: 48%;
+  padding: 18px;
+  margin-bottom: 18px;
+
+  border: none;
+  border-radius: 18px;
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  font-size: 17px;
+
+  backdrop-filter: blur(15px);
+  transition: all 0.3s ease;
+
+  display: inline-block;
+}
+
+.credit {
+  margin-right: 2%;
+}
+/* ===== CREDIT + GRADE (BETTER LOOK) ===== */
+.credit,
+.grade {
+  width: 48%;
+  display: inline-block;
+  vertical-align: top;
+
+  padding: 14px 18px;
+  margin-bottom: 20px;
+
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  outline: none;
+
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(12px);
+
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+
+  transition: all 0.3s ease;
+}
+
+/* spacing between dropdowns */
+.credit {
+  margin-right: 2%;
+}
+
+/* hover */
+.credit:hover,
+.grade:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.09);
+}
+
+/* focus glow */
+.credit:focus,
+.grade:focus {
+  border: 1px solid rgba(137, 206, 255, 0.5);
+  box-shadow: 0 0 18px rgba(137,206,255,0.2);
+}
+
+/* dropdown options */
+option {
+  color: black;
+}
+/* ===== COURSE ROW ===== */
+.course-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* make selects fit nicely */
+.credit,
+.grade {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+/* delete button */
+.delete-btn {
+  width: 55px;
+  height: 52px;
+  flex-shrink: 0;
+
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+
+  background: rgba(255, 80, 80, 0.12);
+  border: 1px solid rgba(255, 90, 90, 0.2);
+
+  color: #ff7b7b;
+  font-size: 22px;
+
+  transition: all 0.3s ease;
+}
+
+/* hover effect */
+.delete-btn:hover {
+  background: rgba(255, 80, 80, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(255, 70, 70, 0.2);
+}
+
+/* click */
+.delete-btn:active {
+  transform: scale(0.96);
+}
