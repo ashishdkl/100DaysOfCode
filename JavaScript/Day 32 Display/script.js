@@ -10,3 +10,4 @@ let obj = {
   name: Ashish,
   age: 20,
 };
+console.log(obj);
